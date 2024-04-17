@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 export function Home () {
     return (
         <div className={styles.container}>
-            <img src={dog} width="278px" />
+            <img src={dog}  />
             <Link to='/pets'>
                 <Button variant = {ButtonVariant.Default}>Quero adotar</Button>
             </Link>
