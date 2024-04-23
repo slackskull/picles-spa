@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Pets } from "./pages/Pets";
 import { PetDetails } from "./pages/PetDetails";
+import { Shelter } from "./pages/Admin/Shelter";
+import { PetList } from "./pages/Admin/PetList";
 
 
 const router = createBrowserRouter([
@@ -18,13 +20,28 @@ const router = createBrowserRouter([
             },
             {
                 path: '/pets/:id',
-                element: <PetDetails/>
+                element: <PetDetails />
             }
     ],
     },
     {
         path: '/admin',
-        element: <h1>Admin</h1>
+        children: [
+            {
+
+            index: true,
+            element: <Shelter/>,
+            },
+            {
+            path: '/admin/pets',
+            children: [
+                    {
+                        index: true,
+                        element:<PetList />,
+                    },
+                ],
+            },    
+        ],
     },
 
 
