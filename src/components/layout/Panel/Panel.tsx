@@ -3,14 +3,14 @@ import styles from './Panel.module.css'
 import { Sidebar } from '../../common/Sidebar/Sidebar'
 
 interface IPanel {
-    children: ReactNode
+  children: ReactNode
 }
 
-export function Panel({children}: IPanel) {
-    return (
-        <div className={styles.panel}>
-            <Sidebar />
-            <main className={styles.content}>{children}</main>
-        </div>    
-    )  
+export function Panel({ children }: IPanel) {
+  return (
+    <div className={styles.panel}>
+      <Sidebar />
+      <main className={styles.content}>{children}</main>
+    </div>
+  )
 }

@@ -1,4 +1,4 @@
-import { Button } from '../../../components/common/Button'
+import { Button, ButtonVariant } from '../../../components/common/Button'
 import { Input } from '../../../components/common/Input'
 import { Panel } from '../../../components/layout/Panel'
 
@@ -120,7 +120,16 @@ export function Shelter() {
             )}
           </div>
 
-          <Button type="submit">Salvar dados</Button>
+          <Button
+            type="submit"
+            variant={
+              !formState.isDirty || formState.isSubmitting
+                ? ButtonVariant.Disabled
+                : ButtonVariant.Default
+            }
+          >
+            Salvar dados
+          </Button>
         </form>
       )}
     </Panel>

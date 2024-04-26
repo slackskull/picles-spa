@@ -3,23 +3,21 @@ import styles from './Sidebar.module.css'
 import { Toaster, toast } from 'sonner'
 import { useShelter } from '../../../hooks/useShelter'
 
-
 export function Sidebar() {
-    const {data} = useShelter()
+  const { data } = useShelter()
 
-    function validate(event: React.MouseEvent){
-        const canAccess = !!data?.shelterWhatsApp
-        
-    
-        if (!canAccess) {
-            event.preventDefault()
-            toast.error('Insira os dados do abrigo!')
-        }
+  function validate(event: React.MouseEvent) {
+    const canAccess = !!data?.shelterWhatsApp
+
+    if (!canAccess) {
+      event.preventDefault()
+      toast.error('Insira os dados do abrigo!')
     }
+  }
 
-    return (
+  return (
     <>
-        <nav className={styles.sidebar}>
+      <nav className={styles.sidebar}>
         <NavLink
           className={({ isActive }) => (isActive ? styles.active : '')}
           to="/admin"
@@ -38,8 +36,5 @@ export function Sidebar() {
       </nav>
       <Toaster position="top-center" richColors={true} />
     </>
-    )
+  )
 }
-
-
-
